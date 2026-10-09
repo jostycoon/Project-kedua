@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY BINI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+<a
+  id="whatsappBtn"
+  href="https://wa.me/62882003033650?text=Halo%20saya%20ingin%20memberi%20saran%20website%20yang%20bagus"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <i class="fa-brands fa-whatsapp wa-icon" aria-hidden="true"></i>
+  <span>Request</span>
+</a>
+    <audio id="bgMusic" loop>
+  <source src="audio.mp3" type="audio/mpeg">
+</audio>
+<button id="musicBtn">▶ Play</button>
+<script>
+  const bgMusic = document.getElementById("bgMusic");
+  const musicBtn = document.getElementById("musicBtn");
+  musicBtn.addEventListener("click", () => {
+    if (bgMusic.paused) {
+      bgMusic.play();
+      musicBtn.textContent = "♫";
+    } else {
+      bgMusic.pause();
+      musicBtn.textContent = "▶ Play";
+    }
+  });
+</script>
+    </audio>
+<main>
+  <!-- =========================
+       BACKGROUND 1
+  ========================== -->
+  <section class="photo-section section-1 reveal hero hero-1">
+
+    <div class="focus-box">
+      <div class="text-content">
+        <span class="label">WELCOME</span>
+
+        <h1>
+          ATSUKO
+        </h1>
+
+        <p>
+          ini adalah web tentang karakter Atsuko dari game blue archive.
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       ALBUM 4 FOTO
+  ========================== -->
+  <section class="album-section reveal hero hero-1">
+
+    <div class="section-title">
+      <h2>Koleksi Foto</h2>
+      <p>Geser ke kanan atau kiri untuk melihat foto lainnya.</p>
+    </div>
+
+
+    <div class="album-wrapper">
+
+      <div class="album">
+
+        <article class="album-card">
+          <img src="album1.webp" alt="Foto album 1" loading="lazy" decoding="async">
+        </article>
+
+        <article class="album-card">
+          <img src="album2.webp" alt="Foto album 2" loading="lazy" decoding="async">
+        </article>
+
+        <article class="album-card">
+          <img src="album3.webp" alt="Foto album 3" loading="lazy" decoding="async">
+        </article>
+
+        <article class="album-card">
+          <img src="album4.webp" alt="Foto album 4" loading="lazy" decoding="async">
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       BACKGROUND 2
+  ========================== -->
+  <section class="photo-section section-2 reveal hero hero-1">
+
+    <div class="focus-box">
+      <div class="text-content">
+
+        <span class="label">ABOUT</span>
+
+        <h2>
+          Latar Belakang Atsuko
+        </h2>
+
+        <p>
+          Atsuko memiliki garis keturunan darah bangsawan yang penting di Arius, sehingga ia sering dipanggil dengan julukan "Hime" (Putri) oleh rekan-rekannya di Arius Squad (Saori, Misaki, dan Hiyori).Ia tumbuh di bawah didikan dan kendali Beatrice, pemimpin religius Arius yang otoriter dan penuh kebencian. Masa kecilnya dihabiskan dalam lingkungan yang suram, penuh penderitaan, dan indoktrinasi konflik.Karena garis keturunannya, Atsuko dijadikan sebagai objek tumbal ritual oleh Beatrice untuk kepentingan ambisi kelamnya di Arius Basilica.Meskipun dibesarkan dalam suasana yang dingin dan kejam, Atsuko memiliki sifat yang tenang, lembut, menyukai berkebun, dan sangat peduli pada rekan-rekan Arius Squad. Ia juga pernah berinteraksi secara khusus dengan Azusa Shirasu yang dulu juga bagian dari Arius.Dalam Main Story Volume 3, Atsuko sempat menyerahkan dirinya demi menyelamatkan teman-temannya. Berkat bantuan Sensei dan Arius Squad, ia akhirnya berhasil diselamatkan dari rencana eksekusi tumbal oleh Beatrice.
+        </p>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       BACKGROUND 3
+  ========================== -->
+  <section class="photo-section section-3 reveal hero hero-1">
+
+    <div class="focus-box">
+      <div class="text-content">
+
+        <span class="label">THANKS</span>
+
+        <h2>
+          Terimakasih Telah Mengunjungi Website Kami Bila Ingin Memberi Saran Website Yang Bagus Bisa Menghubungi Whatsapp Owner.
+        </h2>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>

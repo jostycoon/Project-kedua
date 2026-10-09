@@ -1,0 +1,606 @@
+/* =========================
+   PENGATURAN KEDUA TOMBOL
+========================= */
+
+#whatsappBtn,
+#musicBtn {
+  position: fixed;
+  bottom: 30px;
+
+  height: 48px;
+  box-sizing: border-box;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 0 18px;
+
+  border: none;
+  border-radius: 50px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+  z-index: 9999;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+
+/* =========================
+   TOMBOL WHATSAPP
+========================= */
+
+#whatsappBtn {
+  left: 20px;
+
+  background: #25D366;
+  color: #ffffff;
+
+  text-decoration: none;
+}
+
+#whatsappBtn:hover {
+  background: #1EBE5D;
+  transform: translateY(-3px);
+}
+
+
+/* IKON WHATSAPP */
+
+.wa-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+  color: #ffffff;
+}
+
+
+/* =========================
+   TOMBOL MUSIK
+========================= */
+
+#musicBtn {
+  right: 20px;
+
+  background: palevioletred;
+  color: white;
+
+  border: 1px solid #333333;
+  
+  border-radius: 50px;
+}
+
+#musicBtn:hover {
+  background: palevioletred;
+  transform: translateY(-3px);
+}
+
+
+/* =========================
+   TAMPILAN HP
+========================= */
+
+@media (max-width: 480px) {
+  #whatsappBtn,
+  #musicBtn {
+    bottom: 20px;
+
+    height: 42px;
+    padding: 0 13px;
+
+    font-size: 13px;
+  }
+
+  #whatsappBtn {
+    left: 12px;
+  }
+
+  #musicBtn {
+    right: 12px;
+  }
+
+  .wa-icon {
+    font-size: 19px;
+  }
+}
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: palevioletred;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+
+/* =========================
+   PHOTO SECTION
+========================= */
+
+.photo-section {
+  --background-image: url("bg1.webp");
+
+  position: relative;
+
+  min-height: 100vh;
+  padding: 100px 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+
+/* Background blur */
+
+.photo-section::before {
+  content: "";
+
+  position: absolute;
+  inset: -25px;
+
+  background-image: var(--background-image);
+  background-size: cover;
+  background-position: center;
+
+  filter:
+    blur(10px)
+    brightness(1.00);
+
+  transform:
+  translate3d(0, var(--parallax-y, 0px), 0)
+  scale(1.08);
+
+  z-index: 0;
+}
+
+
+/* Lapisan gelap */
+
+.photo-section::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.6)
+    );
+
+  z-index: 1;
+}
+
+
+/* =========================
+   AREA FOTO TAJAM + TEXT
+========================= */
+
+.focus-box {
+
+  position: relative;
+
+  z-index: 2;
+
+  /*
+    Ukuran mengikuti isi teks.
+  */
+  width: 100%;
+  max-width: min(900px, 90vw);
+
+  /*
+    Foto hanya muncul di area text.
+  */
+  background-image: var(--background-image);
+  background-size: cover;
+  background-position: center;
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.5);
+
+  isolation: isolate;
+}
+
+
+/* Lapisan gelap tipis di foto */
+
+.focus-box::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.55)
+    );
+
+  z-index: -1;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.text-content {
+
+  padding:
+    clamp(35px, 6vw, 80px)
+    clamp(25px, 6vw, 80px);
+
+  text-align: center;
+
+  backdrop-filter: blur(2px);
+}
+
+.label {
+
+  display: inline-block;
+
+  margin-bottom: 15px;
+
+  padding: 8px 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  border-radius: 50px;
+
+  font-size: 12px;
+  letter-spacing: 3px;
+
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.text-content h1,
+.text-content h2 {
+
+  max-width: 700px;
+
+  margin-bottom: 20px;
+
+  font-size: clamp(32px, 6vw, 72px);
+
+  line-height: 1.05;
+}
+
+.text-content p {
+
+  max-width: 650px;
+
+  margin: auto;
+
+  color: rgba(255, 255, 255, 0.85);
+
+  font-size: clamp(15px, 2vw, 18px);
+
+  line-height: 1.7;
+}
+
+
+/* =========================
+   BACKGROUND BERBEDA
+========================= */
+
+.section-1 {
+  --background-image: url("bg1.webp");
+}
+
+.section-2 {
+  --background-image: url("bg2.webp");
+}
+
+.section-3 {
+  --background-image: url("bg3.webp");
+}
+
+
+/* =========================
+   ALBUM
+========================= */
+
+.album-section {
+
+  position: relative;
+
+  padding: 90px 0 110px;
+
+  background: pink;
+
+}
+
+
+/* Judul album */
+
+.section-title {
+
+  padding: 0 20px;
+
+  margin-bottom: 35px;
+
+  text-align: center;
+}
+
+.section-title span {
+
+  font-size: 12px;
+
+  letter-spacing: 4px;
+
+  color: white;
+}
+
+.section-title h2 {
+
+  margin: 10px 0;
+
+  font-size: clamp(28px, 5vw, 48px);
+}
+
+.section-title p {
+
+  color: white;
+
+  font-size: 15px;
+}
+
+
+/* =========================
+   HORIZONTAL ALBUM
+========================= */
+
+.album-wrapper {
+
+  width: 100%;
+
+  overflow: hidden;
+
+}
+
+.album {
+
+  display: flex;
+
+  gap: 20px;
+
+  overflow-x: auto;
+
+  padding:
+    10px
+    max(20px, calc((100vw - 1200px) / 2))
+    30px;
+
+  scroll-snap-type: x mandatory;
+
+  scroll-behavior: smooth;
+
+  overscroll-behavior-x: contain;
+
+  scrollbar-width: none;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.album::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* =========================
+   PHOTO CARD
+========================= */
+
+.album-card {
+
+  flex: 0 0 clamp(250px, 70vw, 380px);
+
+  aspect-ratio: 4 / 5;
+
+  scroll-snap-align: center;
+
+  border-radius: 20px;
+  
+  box-sizing: 30px;
+
+  overflow: hidden;
+
+  background: palevioletred;
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.4);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.album-card img {
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition:
+    transform 0.5s ease;
+}
+
+
+/* Efek saat disentuh / hover */
+
+.album-card:hover {
+
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 25px 45px rgba(0, 0, 0, 0.55);
+}
+
+.album-card:hover img {
+
+  transform: scale(1.05);
+}
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+.reveal {
+
+  opacity: 0;
+
+  transform:
+    translateY(80px)
+    scale(0.97);
+
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+
+}
+
+.reveal.show {
+
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+  .photo-section {
+
+    min-height: 85vh;
+
+    padding:
+      80px
+      15px;
+  }
+
+  .focus-box {
+
+    width: 92vw;
+
+    border-radius: 18px;
+  }
+
+  .text-content {
+
+    padding:
+      45px
+      25px;
+  }
+
+  .text-content h1,
+  .text-content h2 {
+
+    font-size: 34px;
+  }
+
+  .text-content p {
+
+    font-size: 14px;
+
+    line-height: 1.6;
+  }
+
+  .album-section {
+
+    padding:
+      70px 0
+      90px;
+  }
+
+  .album {
+
+    gap: 15px;
+  }
+
+  .album-card {
+
+    flex-basis: 75vw;
+
+    border-radius: 17px;
+  }
+}
+
+/* FOTO BACKGROUND */
+.background-image {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: var(--bg-width, 100%);
+  height: var(--bg-height, 100%);
+
+  object-fit: var(--bg-fit, cover);
+  object-position: var(--bg-position, center);
+
+  /* Bergerak mengikuti scrolling */
+  transform:
+    translate3d(
+      -50%,
+      calc(-50% + var(--parallax-y, 0px)),
+      0
+    )
+    scale(var(--bg-zoom, 1));
+
+  will-change: transform;
+
+  z-index: 0;
+}
+
+
+/* TEKS BERGERAK DENGAN ARAH BERBEDA */
+.focus-content {
+  position: relative;
+  z-index: 2;
+
+  transform:
+    translate3d(0, var(--content-y, 0px), 0);
+
+  will-change: transform;
+}
